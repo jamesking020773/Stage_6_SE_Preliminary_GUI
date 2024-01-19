@@ -47,6 +47,18 @@ nav ul li a {
     margin: auto;
     overflow: auto;
     padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+}
+
+#main-content {
+    flex: 3; /* Adjust the ratio as needed */
+    margin-right: 20px; /* Spacing between main content and sidebar */
+}
+
+/* Sidebar Styles */
+#sidebar {
+    flex: 1; /* Adjust the ratio as needed */
 }
 
 /* Headings */
