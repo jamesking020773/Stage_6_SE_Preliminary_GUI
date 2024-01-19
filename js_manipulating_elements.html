@@ -7,23 +7,22 @@
 </head>
 <body>
 	<h1>Software Engineering - Web Application Basics</h1>
-    <h2>JavaScript - Hiding/Revealing Elements</h2>
+    	<h2>JavaScript - Hiding/Revealing Elements</h2>
+    	<p id="questionText"></p>
+    	<p id="answerText"></p>
+    	<button id="answerButton" onclick="displayAnswer()"> Reveal Answer </button>  
     
-    <p id="questionText"></p>
-    <p id="answerText"></p>
-    <button id="answerButton" onclick="displayAnswer()"> Reveal Answer </button>  
-    
-    <script>
-    window.onload = function(){
-        document.getElementById("questionText").innerText='Question: What are the 3 most common types of images used on a web page?';
-        document.getElementById("answerText").style.display='none';
-        document.getElementById("answerText").innerText='Answer: JPEG, GIF and PNG.';
-    }
+<script>
+    	window.onload = function(){
+        	document.getElementById("questionText").innerText='Question: What are the 3 most common types of images used on a web page?';
+        	document.getElementById("answerText").style.display='none';
+        	document.getElementById("answerText").innerText='Answer: JPEG, GIF and PNG.';
+    	}
 
-    function displayAnswer() {
-            document.getElementById("answerText").style.display='block';
-            document.getElementById("answerButton").style.display='none';
-    }
-    </script>
+    	function displayAnswer() {
+            	document.getElementById("answerText").style.display='block';
+            	document.getElementById("answerButton").style.display='none';
+    	}
+</script>
 </body>
 </html>
