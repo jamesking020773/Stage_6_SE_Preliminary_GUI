@@ -31,7 +31,7 @@ body::before {
 /* Header Styles */
 header {
     background: #333;
-    color: #fff;
+    color: #CC5500;
     padding: 10px 0;
     text-align: center;
 }
@@ -121,5 +121,5 @@ a {
 }
 
 a:hover {
-    color: #555;
+    color: #CC5500;
 }
