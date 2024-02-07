@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Stage 6 Software Engineering</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f4f4f4;
+            padding: 20px;
+        }
+        h1 {
+            margin-bottom: 20px;
+        }
+    </style>
+    <script>
+        function dynamicHeading() {
+            const heading = document.querySelector('h1');
+            let message1 = "Hello";
+            let message2 = "Goodbye";
+            if (heading.innerHTML === message1) {
+                heading.innerHTML = message2;
+            } else {
+                heading.innerHTML = message1;
+            }
+        }
+    </script>
+</head>
+<body>
+	<h1>Hello</h1>
+    <button onclick="dynamicHeading()"> Click here </button>  
+</body>
+</html>

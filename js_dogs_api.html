@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>API Access Example</title>
+</head>
+<body>
+    <h1>Cat Images</h1>
+    <div id="catImages"></div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const apiKey = 'live_sZEaDfkZrElrlKQjHK5U7sTGpbg2PCKUSrS3vESPcILYLrMpJiNLe2egsZGo47VR';
+            const apiUrl = `https://api.thecatapi.com/v1/images/search?api_key=${apiKey}`;
+
+            fetch(apiUrl)
+                .then(response => response.json())
+                .then(data => {
+                    const imagesContainer = document.getElementById('catImages');
+                    data.forEach(cat => {
+                        const img = document.createElement('img');
+                        img.src = cat.url;
+                        img.style.width = '300px';
+                        img.style.height = 'auto';
+                        img.style.margin = '10px';
+                        imagesContainer.appendChild(img);
+                    });
+                })
+                .catch(error => console.error('Error:', error));
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Stage 6 Software Engineering</title>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            if (!localStorage.getItem("counter")) {
+                localStorage.setItem("counter", 0);
+            }
+            
+            function count() {
+                let counter = parseInt(localStorage.getItem("counter"));
+                counter++;
+                document.querySelector("#counterDisplay").innerHTML = counter;
+                localStorage.setItem("counter", counter);
+            }
+            document.querySelector("#counterDisplay").innerHTML = localStorage.getItem("counter");
+            setInterval(count, 1000);
+        })
+    </script>    
+</head>
+<body>
+	<h1>Counter</h1>
+    <div id="counterDisplay"></div>  
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>XOR Encryption and Decryption</title>
+    <script>
+        function encryptDecrypt(inputString) {
+            var xorKey = 'P';
+            var outputString = '';
+
+            for (var i = 0; i < inputString.length; i++) {
+                outputString += String.fromCharCode(inputString.charCodeAt(i) ^ xorKey.charCodeAt(0));
+            }
+
+            return outputString;
+        }
+
+        function performOperation() {
+            var inputText = document.getElementById('inputText').value;
+            var outputText = encryptDecrypt(inputText);
+            document.getElementById('outputText').innerText = outputText;
+        }
+    </script>
+</head>
+<body>
+    <h2>XOR Encryption and Decryption</h2>
+    <input type="text" id="inputText" placeholder="Enter text">
+    <button onclick="performOperation()">Encrypt/Decrypt</button>
+    <p>Output: <span id="outputText"></span></p>
+</body>
+</html>

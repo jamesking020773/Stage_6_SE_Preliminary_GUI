@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Stage 6 Software Engineering</title>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            let counter = 0;
+            function count() {
+                counter++;
+                document.getElementById("counterDisplay").innerText = counter;
+                if (counter % 10 === 0) {
+                    alert(`Count is now ${counter}`);
+                }
+            }
+            document.querySelector("#countButton").onclick = count;
+        })
+    </script>    
+</head>
+<body>
+	<h1>Counter</h1>
+    <h2>JavaScript - Manipulating the DOM</h2>
+    <div id="counterDisplay">0</div>
+    <button id="countButton"> Click here to increment the counter </button> 
+</body>
+</html>
