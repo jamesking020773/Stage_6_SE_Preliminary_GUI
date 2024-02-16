@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Stage 6 Software Engineering</title>
+<style>
+    body { font-family: Arial, sans-serif; padding: 20px;}
+    .question {margin: 20px 20px 20px 20px; font-size: 20px;}
+    .answer {margin: 20px 20px 20px 20px; font-size: 20px;}
+    #revealBtn {margin: 20px 20px 20px 20px; font-size: 16px; cursor: pointer;}
+</style>
+<script>
+    window.onload = function(){
+        const questionElement = document.getElementById('question');
+        const answerElement = document.getElementById('answer');
+        const btn = document.getElementById('revealBtn');
+        questionElement.textContent = qa[currentQuestionIndex].question;
+        answerElement.textContent = qa[currentQuestionIndex].answer;
+        answerElement.style.display = "none";
+        btn.textContent = "Reveal Answer";
+    }
+
+    const qa = [
+      { question: "Question: What are the 3 most common types of images used on a web page?", answer: "Answer: JPEG, GIF and PNG." },
+      { question: "Question: What is the best image format for displaying a photograph on a webpage?", answer: "Answer: JPEG." }
+    ];
+    
+    let currentQuestionIndex = 0;
+    
+    function revealOrReset() {
+      const questionElement = document.getElementById('question');
+      const answerElement = document.getElementById('answer');
+      const btn = document.getElementById('revealBtn');
+    
+      if (btn.textContent === "Reveal Answer") {
+        answerElement.style.display = "block";
+        btn.textContent = "Reset";
+      } else if (btn.textContent === "Reset") {
+        currentQuestionIndex++;
+        
+        // Check if we have more questions
+        if (currentQuestionIndex < qa.length) {
+          questionElement.textContent = qa[currentQuestionIndex].question;
+          answerElement.textContent = qa[currentQuestionIndex].answer;
+          answerElement.style.display = "none";
+          btn.textContent = "Reveal Answer";
+        } else {
+          btn.style.display = "none"; // Hide button if no more questions
+          answerElement.style.display = "none"; // Hide answer 
+          questionElement.textContent = "No more questions."
+        }
+      }
+    }
+    </script>
+</head>
+<body>
+	<h1>JavaScript - Hiding/Revealing Elements</h1>
+    	<div id="question"></div>
+    	<div id="answer"></div>
+    	<button id="revealBtn" onclick="revealOrReset()"></button> 
+</body>
+</html>
