@@ -1,46 +1,39 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>
-	Stage 6 Software Engineering
-	</title>
+	<title>Stage 6 Software Engineering</title>
+    <script>
+        var clickCount = 1;
+
+        window.onload = function(){
+            document.getElementById("questionText").innerText='Question: What are the 3 most common types of images used on a web page?';
+            document.getElementById("answerText").style.display='none';
+            document.getElementById("answerText").innerText='Answer: JPEG, GIF and PNG.';
+            document.getElementById("answerButton").innerText='Reveal Answer';
+        }
+        function displayAnswer() {
+            if (clickCount == 1) {
+                document.getElementById("answerText").style.display='block';
+                document.getElementById("answerButton").innerText='Reset';
+                clickCount += 1;
+            }
+            else if (clickCount == 2) {
+                document.getElementById("questionText").innerText='Question: What is the best image format for displaying a photograph on a webpage?';
+                document.getElementById("answerText").style.display='none';
+                document.getElementById("answerText").innerText='Answer: JPEG.';
+                document.getElementById("answerButton").innerText='Reveal Answer';
+                clickCount += 1;
+            }
+            else if (clickCount == 3) {
+                document.getElementById("answerText").style.display='block';
+                document.getElementById("answerButton").style.display='none';
+            }
+        }  
+    </script>
 </head>
 <body>
-	<h1>Software Engineering - Web Application Basics</h1>
-    <h2>Activity 6: JavaScript - Hiding/Revealing Elements</h2>
-    
-    <p id="questionText"></p>
-    <p id="answerText"></p>
-    <button id="answerButton" onclick="displayAnswer()"> Reveal Answer </button>  
-    
-    <script>
-    var alternateQuestion = false;
-    var alternateAnswer = false;
-
-    window.onload = function(){
-        document.getElementById("questionText").innerText='Question: What are the 3 most common types of images used on a web page?';
-        document.getElementById("answerText").style.display='none';
-        document.getElementById("answerText").innerText='Answer: JPEG, GIF and PNG.';
-    }
-
-    function displayAnswer() {
-        if (alternateQuestion == false){
-            document.getElementById("answerText").style.display='block';
-            document.getElementById("answerButton").innerText='Reset';
-            alternateQuestion = true;
-        }
-        else if (alternateQuestion == true && alternateAnswer == false){
-            document.getElementById("questionText").innerText='Question: What is the best image format for displaying a photograph on a webpage?';
-            document.getElementById("answerText").style.display='none';
-            document.getElementById("answerText").innerText='Answer: JPEG.';
-            document.getElementById("answerButton").innerText='Reveal Answer';
-            alternateAnswer = true;
-        }
-        else if (alternateQuestion == true && alternateAnswer == true){
-            document.getElementById("answerText").style.display='block';
-            document.getElementById("answerButton").style.display='none';
-        } 
-    }
-    </script>
+    	<p id="questionText"></p>
+    	<p id="answerText"></p>
+    	<button id="answerButton" onclick="displayAnswer()"></button>  
 </body>
 </html>
