@@ -1,28 +1,23 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>
-	Stage 6 Software Engineering
-	</title>
-</head>
-<body>
-	<h1>Software Engineering - Web Application Basics</h1>
-    	<h2>JavaScript - Hiding/Revealing Elements</h2>
-    	<p id="questionText"></p>
-    	<p id="answerText"></p>
-    	<button id="answerButton" onclick="displayAnswer()"> Reveal Answer </button>  
-    
-<script>
+	<title>Stage 6 Software Engineering</title>
+	<script>
     	window.onload = function(){
         	document.getElementById("questionText").innerText='Question: What are the 3 most common types of images used on a web page?';
-        	document.getElementById("answerText").style.display='none';
+			document.getElementById("answerButton").innerText='Reveal Answer'; // manipulate the element by changing the text using the .innertext property
+            document.getElementById("answerText").style.display='none'; // hide the element by by setting the CSS display property to 'none'
         	document.getElementById("answerText").innerText='Answer: JPEG, GIF and PNG.';
     	}
-
     	function displayAnswer() {
-            	document.getElementById("answerText").style.display='block';
-            	document.getElementById("answerButton").style.display='none';
+            	document.getElementById("answerText").style.display='block'; // unhide the answer by setting the CSS display property to 'block'
+            	document.getElementById("answerButton").style.display='none'; // hide the button by by setting the CSS display property to 'none'
     	}
-</script>
+	</script>	
+</head>
+<body>
+    	<p id="questionText"></p> <!-- create the HTML element for the question -->
+    	<p id="answerText"></p> <!-- create the HTML element for the answer -->
+    	<button id="answerButton" onclick="displayAnswer()"></button> <!-- create the HTML element for the button -->
 </body>
 </html>
