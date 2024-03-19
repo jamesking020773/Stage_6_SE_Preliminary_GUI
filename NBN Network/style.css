@@ -1,0 +1,35 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: Arial, sans-serif;
+}
+
+#map {
+    width: 70%;
+    height: 100%;
+    float: left;
+    background-color: #e0e0e0; /* Placeholder for an actual map */
+}
+
+#controls {
+    width: 30%;
+    height: 100%;
+    float: right;
+    padding: 20px;
+}
+
+label, select, button {
+    display: block;
+    margin: 10px 0;
+}
+
+.node {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: red;
+    position: absolute;
+    margin-left: -5px; /* Half of the width to center the dot */
+    margin-top: -5px; /* Half of the height to center the dot */
+}

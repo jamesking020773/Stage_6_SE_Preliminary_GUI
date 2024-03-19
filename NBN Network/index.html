@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minimum Spanning Tree Simulation</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="map">
+        <!-- SVG element for drawing lines -->
+        <svg id="svgOverlay" style="width: 100%; height: 100%; position: absolute; top: 0; left: 0;"></svg>
+    </div>
+    <div id="controls">
+        <label for="connectionType">Connection Type:</label>
+        <select id="connectionType">
+            <!-- Options added via JavaScript -->
+        </select>
+        <button onclick="finalizeNode()">Place Node</button>
+        <button onclick="calculateMST()">Submit Solution</button>
+        <div id="score"></div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
